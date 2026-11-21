@@ -1,0 +1,19 @@
+{
+  "name": "wichi-motor",
+  "version": "0.3.2",
+  "description": "Wichinion: servidor de agente propio, compatible con el subconjunto de la API de OpenCode 2.x que usan los clientes de Wichi",
+  "type": "module",
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test test/*.test.js",
+    "test:sin-modelo": "node --test test/motor.test.js test/tools.test.js test/seguridad.test.js test/resiliencia.test.js",
+    "bench:compat": "node bench/compat.mjs",
+    "bench:perf": "node bench/perf.mjs",
+    "bench:agentes": "node bench/agentes.mjs",
+    "humo:vscode": "node test/humo-vscode.mjs"
+  }
+}

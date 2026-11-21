@@ -1,0 +1,18 @@
+# Blueprint de Render: Wichinion (motor propio de Wichi) en paralelo al Cowork de OpenCode. Plan gratuito, sin tarjeta.
+# La contraseña la genera Render (OPENCODE_SERVER_PASSWORD): léela en el panel, Environment, y escríbela en la app.
+# No va en este archivo.
+services:
+  - type: web
+    name: wichinion-prueba
+    runtime: docker
+    plan: free
+    region: virginia
+    dockerfilePath: ./Dockerfile
+    autoDeployTrigger: commit
+    envVars:
+      - key: OPENCODE_SERVER_PASSWORD
+        generateValue: true
+      - key: MOTOR_PORT
+        value: "10000"
+      - key: PORT
+        value: "10000"
